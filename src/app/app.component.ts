@@ -13,11 +13,26 @@ export class AppComponent {
   height = 250;
   colspan = 5;
   isActive = false;
-  title_copy = 'test-raf';
-
+  i:number = 1;
   onSave() {
     this.isActive = !this.isActive;
-    this.title = this.title_copy ? "This is My App, not Rafeen's!" : this.title;
+    let title_copy:string = this.title;
+    this.title = title_copy ? "This is My App, not Rafeen's!" : this.title;
+  }
+  // Event Binding Example
+  onClick(){
+    let temp:number = this.i;
+    console.log("Button was clicked!" + this.i);
+    this.i = temp + 1;
+  }
+  // Event Binding Example
+  onDivClick(){
+    console.log("Div was Clicked!")
+  }
+  //Event Filtering Example
+  onKeyUp(){
+    console.log("Enter was pressed!" + this.i);
+    this.i = this.i + 1;
   }
 }
 
