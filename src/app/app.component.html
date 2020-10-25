@@ -1,0 +1,41 @@
+<app-test1></app-test1>
+<app-warning></app-warning>
+<button class="btn btn-warning" (click) = "onSave()">Save</button>
+<h1>
+  {{title}}
+</h1>
+<h3>CSS Class Binding</h3>
+<button class="btn btn-primary" [class.disabled] = [isActive]>Submit</button>
+
+<h3>CSS Style Binding</h3>
+<button class="btn btn-primary" [style.backgroundColor] = "isActive ? 'blue' : 'red'">Submit</button>
+
+<h2 [textContent]="title">
+</h2>
+
+<h3>String Interpolation Example</h3>
+<img src={{imageSource}} alt="" height={{height}} width={{width}}>
+
+<h3>Property Binding Example</h3>
+<img [src]="imageSource" [alt]="imageTitle" [width] = "width" [height] = "height">
+
+<h3>2 Way Binding Example</h3>
+<img src={{imageSource}} alt="" height={{height}} width={{width}}>
+
+
+<p style="font-size: {{colspan}}em;" [textContent] = "colspan">
+</p>
+<table>
+  <tr>
+    <th [attr.colspan]="colspan">Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td [attr.colspan]="colspan">January</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td [attr.colspan]="colspan">February</td>
+    <td>$80</td>
+  </tr>
+</table>
