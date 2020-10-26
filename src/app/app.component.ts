@@ -14,6 +14,7 @@ export class AppComponent {
   colspan = 5;
   isActive = false;
   i:number = 1;
+  username: string = "me@example.com";
   onSave() {
     this.isActive = !this.isActive;
     let title_copy:string = this.title;
@@ -33,6 +34,12 @@ export class AppComponent {
   onKeyUp(){
     console.log("Enter was pressed!" + this.i);
     this.i = this.i + 1;
+  }
+  onKeyUpOutputText(email){
+    console.log(email)
+  }
+  onTwoWayBinding(){
+    console.log("Username: " + this.username);
   }
 }
 

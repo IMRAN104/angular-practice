@@ -23,7 +23,7 @@
 <h3>2 Way Binding Example</h3>
 <img src="{{ imageSource }}" alt="" height="{{ height }}" width="{{ width }}" />
 
-<p style="font-size: {{ colspan }}em;" [textContent]="colspan"></p>
+<p [textContent]="colspan"  style="font-size: {{ colspan }}em;" ></p>
 <table>
   <tr>
     <th [attr.colspan]="colspan">Month</th>
@@ -38,6 +38,17 @@
     <td>$80</td>
   </tr>
 </table>
+
+<section>
+  <div class="h2">
+    Event Binding Example
+  </div>
+  <div class="btn btn-primary button h3 p-3" (click)="onDivClick()">
+    <button (click) = "onClick()">Submit</button>
+  </div>
+</section>
+
+<h2>Event Filtering Example</h2>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
@@ -45,12 +56,83 @@
   <input type="text" (keyup.enter)="onKeyUp()"  class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 </div>
 
-<section>
-  <div class="h2">
-    Event Binding
-  </div>
-  <div class="btn btn-primary button h3 p-3" (click)="onDivClick()">
-    <button (click) = "onClick()">Submit</button>
-  </div>
+<h2>Template Variables Example</h2>
+<input type="text" #email (keyup.enter)="onKeyUpOutputText(email)"  class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 
-</section>
+<h2>Two Way Binding Example, Most used in Angular</h2>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">UserName</span>
+  </div>
+  <input type="text" [(ngModel)]="username" (keyup.enter)="onTwoWayBinding()"  class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small pt-4">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase">Footer Content</h5>
+        <p>Here you can use rows and columns to organize your footer content.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  </div>
+</footer>
