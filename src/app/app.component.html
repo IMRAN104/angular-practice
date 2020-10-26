@@ -8,7 +8,10 @@
 <button class="btn btn-primary" [class.disabled]="[isActive]">Submit</button>
 
 <h3>CSS Style Binding</h3>
-<button class="btn btn-primary" [style.backgroundColor]="isActive ? 'blue' : 'red'">
+<button
+  class="btn btn-primary"
+  [style.backgroundColor]="isActive ? 'blue' : 'red'"
+>
   Submit
 </button>
 
@@ -23,7 +26,7 @@
 <h3>2 Way Binding Example</h3>
 <img src="{{ imageSource }}" alt="" height="{{ height }}" width="{{ width }}" />
 
-<p [textContent]="colspan"  style="font-size: {{ colspan }}em;" ></p>
+<p [textContent]="colspan" style="font-size: {{ colspan }}em;"></p>
 <table>
   <tr>
     <th [attr.colspan]="colspan">Month</th>
@@ -40,11 +43,9 @@
 </table>
 
 <section>
-  <div class="h2">
-    Event Binding Example
-  </div>
+  <div class="h2">Event Binding Example</div>
   <div class="btn btn-primary button h3 p-3" (click)="onDivClick()">
-    <button (click) = "onClick()">Submit</button>
+    <button (click)="onClick()">Submit</button>
   </div>
 </section>
 
@@ -53,44 +54,71 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
   </div>
-  <input type="text" (keyup.enter)="onKeyUp()"  class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+  <input
+    type="text"
+    (keyup.enter)="onKeyUp()"
+    class="form-control"
+    aria-label="Default"
+    aria-describedby="inputGroup-sizing-default"
+  />
 </div>
 
 <h2>Template Variables Example</h2>
-<input type="text" #email (keyup.enter)="onKeyUpOutputText(email)"  class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+<input
+  type="text"
+  #email
+  (keyup.enter)="onKeyUpOutputText(email)"
+  class="form-control"
+  aria-label="Default"
+  aria-describedby="inputGroup-sizing-default"
+/>
 
 <h2>Two Way Binding Example, Most used in Angular</h2>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default">UserName</span>
+    <span class="input-group-text" id="inputGroup-sizing-default"
+      >UserName</span
+    >
   </div>
-  <input type="text" [(ngModel)]="username" (keyup.enter)="onTwoWayBinding()"  class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+  <input
+    type="text"
+    [(ngModel)]="username"
+    (keyup.enter)="onTwoWayBinding()"
+    class="form-control"
+    aria-label="Default"
+    aria-describedby="inputGroup-sizing-default"
+  />
 </div>
+
+<h2>Directives Example</h2>
+<ul>
+  <ng-container *ngIf="!isActive">
+    <li *ngFor="let friend of friends">
+      <h5>{{ friend }}</h5>
+    </li>
+  </ng-container>
+</ul>
 
 <!-- Footer -->
 <footer class="page-footer font-small pt-4">
-
   <!-- Footer Links -->
   <div class="container-fluid text-center text-md-left">
-
     <!-- Grid row -->
     <div class="row">
-
       <!-- Grid column -->
       <div class="col-md-6 mt-md-0 mt-3">
-
         <!-- Content -->
         <h5 class="text-uppercase">Footer Content</h5>
-        <p>Here you can use rows and columns to organize your footer content.</p>
-
+        <p>
+          Here you can use rows and columns to organize your footer content.
+        </p>
       </div>
       <!-- Grid column -->
 
-      <hr class="clearfix w-100 d-md-none pb-3">
+      <hr class="clearfix w-100 d-md-none pb-3" />
 
       <!-- Grid column -->
       <div class="col-md-3 mb-md-0 mb-3">
-
         <!-- Links -->
         <h5 class="text-uppercase">Links</h5>
 
@@ -108,10 +136,8 @@
             <a href="#!">Link 4</a>
           </li>
         </ul>
-
       </div>
       <div class="col-md-3 mb-md-0 mb-3">
-
         <h5 class="text-uppercase">Links</h5>
 
         <ul class="list-unstyled">
@@ -128,11 +154,11 @@
             <a href="#!">Link 4</a>
           </li>
         </ul>
-
       </div>
     </div>
   </div>
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+  <div class="footer-copyright text-center py-3">
+    © 2020 Copyright:
     <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
   </div>
 </footer>

@@ -1,5 +1,5 @@
+import { AppService } from './app.service';
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,6 +15,11 @@ export class AppComponent {
   isActive = false;
   i:number = 1;
   username: string = "me@example.com";
+  friends: string[];
+  constructor(){
+    let service = new AppService();
+    this.friends = service.getFriends();
+  }
   onSave() {
     this.isActive = !this.isActive;
     let title_copy:string = this.title;
